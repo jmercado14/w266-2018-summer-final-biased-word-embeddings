@@ -1,6 +1,6 @@
 # debiasing
 from __future__ import print_function, division
-import helperDebias, json, argparse
+import we, json, argparse
 import numpy as np
 import sys
 if sys.version_info[0] < 3:
