@@ -8,11 +8,11 @@ if sys.version_info[0] < 3:
     open = io.open
 
 def debias(E, gender_specific_words, definitional, equalize):
-    gender_direction = helperDebias.doPCA(definitional, E).components_[0]
+    gender_direction = we.doPCA(definitional, E).components_[0]
     specific_set = set(gender_specific_words)
     for i, w in enumerate(E.words):
         if w not in specific_set:
-            E.vecs[i] = helperDebias.drop(E.vecs[i], gender_direction)
+            E.vecs[i] = we.drop(E.vecs[i], gender_direction)
     E.normalize()
     candidates = {x for e1, e2 in equalize for x in [(e1.lower(), e2.lower()),
                                                      (e1.title(), e2.title()),
@@ -20,7 +20,7 @@ def debias(E, gender_specific_words, definitional, equalize):
     print(candidates)
     for (a, b) in candidates:
         if (a in E.index and b in E.index):
-            y = helperDebias.drop((E.v(a) + E.v(b)) / 2, gender_direction)
+            y = we.drop((E.v(a) + E.v(b)) / 2, gender_direction)
             z = np.sqrt(1 - np.linalg.norm(y)**2)
             if (E.v(a) - E.v(b)).dot(gender_direction) < 0:
                 z = -z
@@ -52,7 +52,7 @@ if __name__ == "__main__":
         gender_specific_words = json.load(f)
     print("gender specific", len(gender_specific_words), gender_specific_words[:10])
 
-    E = helperDebias.WordEmbedding(args.embedding_filename)
+    E = we.WordEmbedding(args.embedding_filename)
 
     print("Debiasing...")
     debias(E, gender_specific_words, defs, equalize_pairs)
