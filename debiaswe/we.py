@@ -4,7 +4,6 @@ import re
 import sys
 import numpy as np
 import scipy.sparse
-from sklearn.decomposition import PCA
 if sys.version_info[0] < 3:
     import io
     open = io.open
@@ -176,53 +175,3 @@ class WordEmbedding:
 
         return ans
 
-
-def viz(analogies):
-    print("\n".join(str(i).rjust(4)+a[0].rjust(29) + " | " + a[1].ljust(29) + (str(a[2]))[:4] for i, a in enumerate(analogies)))
-
-
-def text_plot_words(xs, ys, words, width = 90, height = 40, filename=None):
-    PADDING = 10
-    res = [[' ' for i in range(width)] for j in range(height)]
-    def rescale(nums):
-        a = min(nums)
-        b = max(nums)
-        return [(x-a)/(b-a) for x in nums]
-    print("x:", (min(xs), max(xs)), "y:",(min(ys),max(ys)))
-    xs = rescale(xs)
-    ys = rescale(ys)
-    for (x, y, word) in zip(xs, ys, words):
-        i = int(x*(width - 1 - PADDING))
-        j = int(y*(height-1))
-        row = res[j]
-        z = list(row[i2] != ' ' for i2 in range(max(i-1, 0), min(width, i + len(word) + 1)))
-        if any(z):
-            continue
-        for k in range(len(word)):
-            if i+k>=width:
-                break
-            row[i+k] = word[k]
-    string = "\n".join("".join(r) for r in res)
-#     return string
-    if filename:
-        with open(filename, "w", encoding="utf8") as f:
-            f.write(string)
-        print("Wrote to", filename)
-    else:
-        print(string)
-
-
-def doPCA(pairs, embedding, num_components = 10):
-    matrix = []
-    for a, b in pairs:
-        center = (embedding.v(a) + embedding.v(b))/2
-        matrix.append(embedding.v(a) - center)
-        matrix.append(embedding.v(b) - center)
-    matrix = np.array(matrix)
-    pca = PCA(n_components = num_components)
-    pca.fit(matrix)
-    return pca
-
-
-def drop(u, v):
-    return u - v * u.dot(v) / v.dot(v)
