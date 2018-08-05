@@ -1,129 +1,129 @@
 -0.4154882,congressman
- -0.4115872,businessman
- -0.32975563,councilman
- -0.2997815,dad
- -0.21665451,statesman
- -0.11345412,salesman
- -0.073004864,monk
- -0.072163954,handyman
- -0.041478336,commander
- -0.04051176,minister
- -0.037369348,skipper
- -0.036916208,commissioner
- -0.03343007,observer
- -0.032828867,manager
- -0.032105114,firebrand
- -0.031202465,surgeon
- -0.03115207,citizen
- -0.031070886,archbishop
- -0.029434491,bishop
- -0.02937157,captain
- -0.028252712,magistrate
- -0.027758181,analyst
- -0.026465908,trader
- -0.024340264,politician
- -0.02433247,parliamentarian
- -0.023048654,broadcaster
- -0.022417955,neurosurgeon
- -0.022203512,lawmaker
- -0.021753449,legislator
- -0.021724353,diplomat
- -0.021362206,poet
- -0.020564513,collector
- -0.020251002,vice_chancellor
- -0.0199155,treasurer
- -0.019811813,saint
- -0.019577794,environmentalist
- -0.019246962,lyricist
- -0.018967971,strategist
- -0.018622814,ambassador
- -0.018528743,warrior
- -0.018079683,commentator
- -0.017602574,broker
- -0.01725268,journalist
- -0.017154789,crooner
- -0.017139304,editor
- -0.017062375,correspondent
- -0.016952185,dancer
- -0.01678086,secretary
- -0.016746422,writer
- -0.016692579,deputy
- -0.016180377,singer_songwriter
- -0.016003508,colonel
- -0.015805941,cleric
- -0.01578938,marshal
- -0.015525269,priest
- -0.014975715,columnist
- -0.014601236,performer
- -0.014439364,hitman
- -0.014298532,archaeologist
- -0.014208097,banker
- -0.014165738,envoy
- -0.014139474,fighter_pilot
- -0.012977831,understudy
- -0.012691315,neurologist
- -0.012366661,mediator
- -0.012172326,senator
- -0.012087212,president
- -0.011618484,radiologist
- -0.011612884,artiste
- -0.011320473,soldier
- -0.011280829,geologist
- -0.011231139,cabbie
- -0.0107075125,playwright
- -0.010641807,steward
- -0.010387006,biologist
- -0.009918338,farmer
- -0.0094911,promoter
- -0.0093532195,pundit
- -0.009243512,baron
- -0.009212924,ballplayer
- -0.009212874,boss
- -0.008982189,soloist
- -0.008707077,realtor
- -0.008656549,physician
- -0.008625466,consultant
- -0.008031905,judge
- -0.007645027,curator
- -0.0074981106,scholar
- -0.007072721,filmmaker
- -0.007008185,principal
- -0.0067680506,jurist
- -0.0065368125,ranger
- -0.006462052,prisoner
- -0.006365257,maestro
- -0.0063360455,cab_driver
- -0.006295047,nurse
- -0.006262351,evangelist
- -0.0060723554,doctor
- -0.0059982887,surveyor
- -0.0058573238,chancellor
- -0.0055862633,director
- -0.0053168237,negotiator
- -0.0046161246,infielder
- -0.004604139,goalkeeper
- -0.0044443286,novelist
- -0.004406195,sportsman
- -0.004282304,officer
- -0.004271903,choreographer
- -0.0041096653,midfielder
- -0.003982701,vocalist
- -0.0037263916,financier
- -0.0034154467,pathologist
- -0.0034135173,economist
- -0.0033896202,footballer
- -0.0033185037,councilor
- -0.0024832527,industrialist
- -0.002362358,superintendent
- -0.0018254837,publicist
- -0.0010758097,investment_banker
- -0.0010628349,entertainer
- -0.0010226615,composer
- -0.00066142273,crusader
- -0.0006336919,attorney
- -0.0005528344,naturalist
- -0.00038640067,architect
- -0.00017389191,psychiatrist
+-0.4115872,businessman
+-0.32975563,councilman
+-0.2997815,dad
+-0.21665451,statesman
+-0.11345412,salesman
+-0.073004864,monk
+-0.072163954,handyman
+-0.041478336,commander
+-0.04051176,minister
+-0.037369348,skipper
+-0.036916208,commissioner
+-0.03343007,observer
+-0.032828867,manager
+-0.032105114,firebrand
+-0.031202465,surgeon
+-0.03115207,citizen
+-0.031070886,archbishop
+-0.029434491,bishop
+-0.02937157,captain
+-0.028252712,magistrate
+-0.027758181,analyst
+-0.026465908,trader
+-0.024340264,politician
+-0.02433247,parliamentarian
+-0.023048654,broadcaster
+-0.022417955,neurosurgeon
+-0.022203512,lawmaker
+-0.021753449,legislator
+-0.021724353,diplomat
+-0.021362206,poet
+-0.020564513,collector
+-0.020251002,vice_chancellor
+-0.0199155,treasurer
+-0.019811813,saint
+-0.019577794,environmentalist
+-0.019246962,lyricist
+-0.018967971,strategist
+-0.018622814,ambassador
+-0.018528743,warrior
+-0.018079683,commentator
+-0.017602574,broker
+-0.01725268,journalist
+-0.017154789,crooner
+-0.017139304,editor
+-0.017062375,correspondent
+-0.016952185,dancer
+-0.01678086,secretary
+-0.016746422,writer
+-0.016692579,deputy
+-0.016180377,singer_songwriter
+-0.016003508,colonel
+-0.015805941,cleric
+-0.01578938,marshal
+-0.015525269,priest
+-0.014975715,columnist
+-0.014601236,performer
+-0.014439364,hitman
+-0.014298532,archaeologist
+-0.014208097,banker
+-0.014165738,envoy
+-0.014139474,fighter_pilot
+-0.012977831,understudy
+-0.012691315,neurologist
+-0.012366661,mediator
+-0.012172326,senator
+-0.012087212,president
+-0.011618484,radiologist
+-0.011612884,artiste
+-0.011320473,soldier
+-0.011280829,geologist
+-0.011231139,cabbie
+-0.0107075125,playwright
+-0.010641807,steward
+-0.010387006,biologist
+-0.009918338,farmer
+-0.0094911,promoter
+-0.0093532195,pundit
+-0.009243512,baron
+-0.009212924,ballplayer
+-0.009212874,boss
+-0.008982189,soloist
+-0.008707077,realtor
+-0.008656549,physician
+-0.008625466,consultant
+-0.008031905,judge
+-0.007645027,curator
+-0.0074981106,scholar
+-0.007072721,filmmaker
+-0.007008185,principal
+-0.0067680506,jurist
+-0.0065368125,ranger
+-0.006462052,prisoner
+-0.006365257,maestro
+-0.0063360455,cab_driver
+-0.006295047,nurse
+-0.006262351,evangelist
+-0.0060723554,doctor
+-0.0059982887,surveyor
+-0.0058573238,chancellor
+-0.0055862633,director
+-0.0053168237,negotiator
+-0.0046161246,infielder
+-0.004604139,goalkeeper
+-0.0044443286,novelist
+-0.004406195,sportsman
+-0.004282304,officer
+-0.004271903,choreographer
+-0.0041096653,midfielder
+-0.003982701,vocalist
+-0.0037263916,financier
+-0.0034154467,pathologist
+-0.0034135173,economist
+-0.0033896202,footballer
+-0.0033185037,councilor
+-0.0024832527,industrialist
+-0.002362358,superintendent
+-0.0018254837,publicist
+-0.0010758097,investment_banker
+-0.0010628349,entertainer
+-0.0010226615,composer
+-0.00066142273,crusader
+-0.0006336919,attorney
+-0.0005528344,naturalist
+-0.00038640067,architect
+-0.00017389191,psychiatrist
  0.000128694,medic
  0.00021867495,acquaintance
  0.00024084706,anthropologist
