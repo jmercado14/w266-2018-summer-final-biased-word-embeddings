@@ -1,3 +1,5 @@
+# helper functions
+
 from __future__ import print_function, division
 import re
 import sys
@@ -9,30 +11,14 @@ if sys.version_info[0] < 3:
     open = io.open
 else:
     unicode = str
-"""
-Tools for debiasing word embeddings
-
-Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embeddings
-Tolga Bolukbasi, Kai-Wei Chang, James Zou, Venkatesh Saligrama, and Adam Kalai
-2016
-"""
 
 DEFAULT_NUM_WORDS = 27000
-FILENAMES = {"g_wiki": "glove.6B.300d.small.txt",
-             "g_twitter": "glove.twitter.27B.200d.small.txt",
-             "g_crawl": "glove.840B.300d.small.txt",
-             "w2v": "GoogleNews-word2vec.small.txt",
-             "w2v_large": "GoogleNews-word2vec.txt"}
-
 
 def dedup(seq):
     seen = set()
     return [x for x in seq if not (x in seen or seen.add(x))]
 
-
 def safe_word(w):
-    # ignore words with numbers, etc.
-    # [a-zA-Z\.'_\- :;\(\)\]] for emoticons
     return (re.match(r"^[a-z_]*$", w) and len(w) < 20 and not re.match(r"^_*$", w))
 
 
@@ -40,7 +26,6 @@ def to_utf8(text, errors='strict', encoding='utf8'):
     """Convert a string (unicode or bytestring in `encoding`), to bytestring in utf8."""
     if isinstance(text, unicode):
         return text.encode('utf8')
-    # do bytestring -> unicode -> utf8 full circle, to ensure valid utf8
     return unicode(text, encoding, errors=errors).encode('utf8')
 
 
@@ -66,7 +51,6 @@ class WordEmbedding:
                     if len(vecs) and vecs[-1].shape!=v.shape:
                         print("Got weird line", line)
                         continue
-    #                 v /= np.linalg.norm(v)
                     words.append(s[0])
                     vecs.append(v)
         self.vecs = np.array(vecs, dtype='float32')
@@ -101,9 +85,6 @@ class WordEmbedding:
         self.filter_words(lambda w: self.index[w]<numwords)
 
     def filter_words(self, test):
-        """
-        Keep some words based on test, e.g. lambda x: x.lower()==x
-        """
         self.desc += ", filter"
         kept_indices, words = zip(*[[i, w] for i, w in enumerate(self.words) if test(w)])
         self.words = list(words)
@@ -118,7 +99,6 @@ class WordEmbedding:
     def save_w2v(self, filename, binary=True):
         with open(filename, 'wb') as fout:
             fout.write(to_utf8("%s %s\n" % self.vecs.shape))
-            # store in sorted order: most frequent words at the top
             for i, word in enumerate(self.words):
                 row = self.vecs[i]
                 if binary:
@@ -126,7 +106,7 @@ class WordEmbedding:
                 else:
                     fout.write(to_utf8("%s %s\n" % (word, ' '.join("%f" % val for val in row))))
 
-    def remove_directions(self, directions): #directions better be orthogonal
+    def remove_directions(self, directions):
         self.desc += ", removed"
         for direction in directions:
             self.desc += " "
@@ -141,7 +121,7 @@ class WordEmbedding:
         self.normalize()
 
     def compute_neighbors_if_necessary(self, thresh, max_words):
-        thresh = float(thresh) # dang python 2.7!
+        thresh = float(thresh)
         if self._neighbors is not None and self.thresh == thresh and self.max_words == max_words:
             return
         print("Computing neighbors")
@@ -170,8 +150,6 @@ class WordEmbedding:
         return sorted(words, key=lambda w: self.v(w).dot(v))[-topn:][::-1]
 
     def best_analogies_dist_thresh(self, v, thresh=1, topn=500, max_words=50000):
-        """Metric is cos(a-c, b-d) if |b-d|^2 < thresh, otherwise 0
-        """
         vecs, vocab = self.vecs[:max_words], self.words[:max_words]
         self.compute_neighbors_if_necessary(thresh, max_words)
         rows, cols, vecs = self._neighbors
