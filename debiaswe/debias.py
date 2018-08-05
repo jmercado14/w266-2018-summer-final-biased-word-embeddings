@@ -3,12 +3,22 @@ from __future__ import print_function, division
 import we, json, argparse
 import numpy as np
 import sys
+from sklearn.decomposition import PCA
+
 if sys.version_info[0] < 3:
     import io
     open = io.open
 
 def debias(E, gender_specific_words, definitional, equalize):
-    gender_direction = we.doPCA(definitional, E).components_[0]
+    m_vd = []
+    for a, b in definitional:
+        center = (E.v(a) + E.v(b))/2
+        m_vd.append(E.v(a) - center)
+        m_vd.append(E.v(b) - center)
+    m_vd = np.array(m_vd)
+    pca = PCA(n_components = 10)
+    pca.fit(m_vd)
+    gender_direction = pca.components_[0]
     specific_set = set(gender_specific_words)
     for i, w in enumerate(E.words):
         if w not in specific_set:
