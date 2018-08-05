@@ -1,4 +1,5 @@
-# helper functions for debiasing
+# helper functions
+
 from __future__ import print_function, division
 import re
 import sys
@@ -13,17 +14,16 @@ else:
 
 DEFAULT_NUM_WORDS = 27000
 
-
 def dedup(seq):
     seen = set()
     return [x for x in seq if not (x in seen or seen.add(x))]
-
 
 def safe_word(w):
     return (re.match(r"^[a-z_]*$", w) and len(w) < 20 and not re.match(r"^_*$", w))
 
 
 def to_utf8(text, errors='strict', encoding='utf8'):
+    """Convert a string (unicode or bytestring in `encoding`), to bytestring in utf8."""
     if isinstance(text, unicode):
         return text.encode('utf8')
     return unicode(text, encoding, errors=errors).encode('utf8')
@@ -150,8 +150,6 @@ class WordEmbedding:
         return sorted(words, key=lambda w: self.v(w).dot(v))[-topn:][::-1]
 
     def best_analogies_dist_thresh(self, v, thresh=1, topn=500, max_words=50000):
-        """Metric is cos(a-c, b-d) if |b-d|^2 < thresh, otherwise 0
-        """
         vecs, vocab = self.vecs[:max_words], self.words[:max_words]
         self.compute_neighbors_if_necessary(thresh, max_words)
         rows, cols, vecs = self._neighbors
@@ -175,54 +173,6 @@ class WordEmbedding:
                 break
 
         return ans
-
-
-def viz(analogies):
-    print("\n".join(str(i).rjust(4)+a[0].rjust(29) + " | " + a[1].ljust(29) + (str(a[2]))[:4] for i, a in enumerate(analogies)))
-
-
-def text_plot_words(xs, ys, words, width = 90, height = 40, filename=None):
-    PADDING = 10
-    res = [[' ' for i in range(width)] for j in range(height)]
-    def rescale(nums):
-        a = min(nums)
-        b = max(nums)
-        return [(x-a)/(b-a) for x in nums]
-    print("x:", (min(xs), max(xs)), "y:",(min(ys),max(ys)))
-    xs = rescale(xs)
-    ys = rescale(ys)
-    for (x, y, word) in zip(xs, ys, words):
-        i = int(x*(width - 1 - PADDING))
-        j = int(y*(height-1))
-        row = res[j]
-        z = list(row[i2] != ' ' for i2 in range(max(i-1, 0), min(width, i + len(word) + 1)))
-        if any(z):
-            continue
-        for k in range(len(word)):
-            if i+k>=width:
-                break
-            row[i+k] = word[k]
-    string = "\n".join("".join(r) for r in res)
-#     return string
-    if filename:
-        with open(filename, "w", encoding="utf8") as f:
-            f.write(string)
-        print("Wrote to", filename)
-    else:
-        print(string)
-
-
-def doPCA(pairs, embedding, num_components = 10):
-    matrix = []
-    for a, b in pairs:
-        center = (embedding.v(a) + embedding.v(b))/2
-        matrix.append(embedding.v(a) - center)
-        matrix.append(embedding.v(b) - center)
-    matrix = np.array(matrix)
-    pca = PCA(n_components = num_components)
-    pca.fit(matrix)
-    return pca
-
 
 def drop(u, v):
     return u - v * u.dot(v) / v.dot(v)
