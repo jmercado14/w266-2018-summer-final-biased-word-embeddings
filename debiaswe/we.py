@@ -54,7 +54,7 @@ class WordEmbedding:
                     words.append(s[0])
                     vecs.append(v)
         self.vecs = np.array(vecs, dtype='float32')
-        print(self.vecs.shape)
+#         print(self.vecs.shape)
         self.words = words
         self.reindex()
         norms = np.linalg.norm(self.vecs, axis=1)
@@ -66,7 +66,8 @@ class WordEmbedding:
         self.n, self.d = self.vecs.shape
         assert self.n == len(self.words) == len(self.index)
         self._neighbors = None
-        print(self.n, "words of dimension", self.d, ":", ", ".join(self.words[:4] + ["..."] + self.words[-4:]))
+        print(self.n, "words of dimension", self.d)
+
 
     def v(self, word):
         return self.vecs[self.index[word]]
