@@ -1,0 +1,320 @@
+-0.41548821,congressman
+-0.41158709,businessman
+-0.32975566,councilman
+-0.29978153,dad
+-0.21665451,statesman
+-0.11345413,salesman
+-0.073004857,monk
+-0.072163939,handyman
+-0.041478299,commander
+-0.040511761,minister
+-0.037369266,skipper
+-0.036916204,commissioner
+-0.033430077,observer
+-0.032828867,manager
+-0.032105118,firebrand
+-0.03120245,surgeon
+-0.031152084,citizen
+-0.031070888,archbishop
+-0.029434485,bishop
+-0.029371528,captain
+-0.02825273,magistrate
+-0.027758174,analyst
+-0.026465904,trader
+-0.024340227,politician
+-0.024332466,parliamentarian
+-0.023048623,broadcaster
+-0.022417959,neurosurgeon
+-0.022203522,lawmaker
+-0.021753451,legislator
+-0.021724358,diplomat
+-0.021362204,poet
+-0.020564506,collector
+-0.020250998,vice_chancellor
+-0.019915482,treasurer
+-0.01981182,saint
+-0.019577794,environmentalist
+-0.019246949,lyricist
+-0.018967925,strategist
+-0.018622816,ambassador
+-0.01852867,warrior
+-0.018079644,commentator
+-0.017602572,broker
+-0.017252672,journalist
+-0.017154789,crooner
+-0.017139329,editor
+-0.017062368,correspondent
+-0.016952205,dancer
+-0.016780857,secretary
+-0.016746409,writer
+-0.01669256,deputy
+-0.016180402,singer_songwriter
+-0.016003482,colonel
+-0.015805941,cleric
+-0.015789367,marshal
+-0.015525276,priest
+-0.014975708,columnist
+-0.01460124,performer
+-0.014439339,hitman
+-0.014298532,archaeologist
+-0.014208068,banker
+-0.01416574,envoy
+-0.014139457,fighter_pilot
+-0.012977803,understudy
+-0.012691295,neurologist
+-0.012366655,mediator
+-0.012172332,senator
+-0.012087192,president
+-0.011618511,radiologist
+-0.011612898,artiste
+-0.011320477,soldier
+-0.011280841,geologist
+-0.011231108,cabbie
+-0.011023039,socialite
+-0.010707544,playwright
+-0.010641794,steward
+-0.010387014,biologist
+-0.0099183302,farmer
+-0.0094910245,promoter
+-0.0093531981,pundit
+-0.0092435014,baron
+-0.0092128972,ballplayer
+-0.009212818,boss
+-0.0089822132,soloist
+-0.0087070987,realtor
+-0.0086565316,physician
+-0.0086254701,consultant
+-0.0080319103,judge
+-0.0076450426,curator
+-0.0074980976,scholar
+-0.0070727076,filmmaker
+-0.0070081949,principal
+-0.006768039,jurist
+-0.0065368139,ranger
+-0.0064620511,prisoner
+-0.0063651633,maestro
+-0.0063360492,cab_driver
+-0.0062951497,nurse
+-0.0062623341,evangelist
+-0.0060723508,doctor
+-0.0059982724,surveyor
+-0.0058573424,chancellor
+-0.0055862702,director
+-0.0053168242,negotiator
+-0.0046161376,infielder
+-0.0046041394,goalkeeper
+-0.0044443328,novelist
+-0.0044061244,sportsman
+-0.0042823022,officer
+-0.0042719021,choreographer
+-0.0041096676,midfielder
+-0.0039827214,vocalist
+-0.0037263562,financier
+-0.0034154505,pathologist
+-0.0034135133,economist
+-0.0033895783,footballer
+-0.0033185091,councilor
+-0.0024832468,industrialist
+-0.0023623516,superintendent
+-0.0018255021,publicist
+-0.0010757949,investment_banker
+-0.0010628356,entertainer
+-0.0010226457,composer
+-0.00066138164,crusader
+-0.00063369609,attorney
+-0.00055281329,naturalist
+-0.0003863615,architect
+-0.00017389678,psychiatrist
+ 0.00012867572,medic
+ 0.00021869782,acquaintance
+ 0.00024082232,anthropologist
+ 0.0003078829,provost
+ 0.00035289023,philosopher
+ 0.00042927824,jeweler
+ 0.0008080313,lawyer
+ 0.00097740022,astronaut
+ 0.001004959,substitute
+ 0.0010541175,conductor
+ 0.0011296486,freelance_writer
+ 0.0017677047,programmer
+ 0.002112858,solicitor_general
+ 0.0025074552,aide
+ 0.0026857359,adventurer
+ 0.0027387664,prosecutor
+ 0.0029933951,philanthropist
+ 0.0031131636,administrator
+ 0.0031341212,cameraman
+ 0.0031486554,major_leaguer
+ 0.0032099988,singer
+ 0.0032345429,trucker
+ 0.00336935,planner
+ 0.0035177451,bartender
+ 0.0036551142,hooker
+ 0.0037051912,waiter
+ 0.0038762921,missionary
+ 0.0039814417,marksman
+ 0.0041937823,tycoon
+ 0.0042939242,psychologist
+ 0.0043788962,campaigner
+ 0.0045182859,plastic_surgeon
+ 0.0047258632,organist
+ 0.0048529264,sportswriter
+ 0.0048618065,laborer
+ 0.0048635453,researcher
+ 0.0053573097,historian
+ 0.005370955,chemist
+ 0.0053843148,scientist
+ 0.0054555777,chaplain
+ 0.0054761567,receptionist
+ 0.0057755313,epidemiologist
+ 0.0058727218,athlete
+ 0.0060489536,taxi_driver
+ 0.0062359311,warden
+ 0.0063622054,violinist
+ 0.0067906296,undersecretary
+ 0.0070846379,coach
+ 0.0073106922,fashion_designer
+ 0.0073215803,pollster
+ 0.0074461903,constable
+ 0.0074596438,employee
+ 0.0075083701,homemaker
+ 0.0077703111,fisherman
+ 0.0077896984,bureaucrat
+ 0.0078405235,alter_ego
+ 0.0081831589,butler
+ 0.0082421545,lieutenant
+ 0.008283101,soft_spoken
+ 0.0083615202,lecturer
+ 0.0083678113,photographer
+ 0.008621186,worker
+ 0.0086394316,civil_servant
+ 0.009134775,landlord
+ 0.0091379266,solicitor
+ 0.009150533,musician
+ 0.0092825312,protege
+ 0.0094229393,educator
+ 0.0094727147,assassin
+ 0.0096255811,proprietor
+ 0.010055846,sailor
+ 0.010061078,comic
+ 0.010136513,inspector
+ 0.010233643,investigator
+ 0.010242577,plumber
+ 0.010351736,librarian
+ 0.010387527,comedian
+ 0.010435726,entrepreneur
+ 0.010599358,policeman
+ 0.010714965,interior_designer
+ 0.010830274,caretaker
+ 0.010835506,dermatologist
+ 0.010876767,economics_professor
+ 0.010983292,athletic_director
+ 0.011045759,confesses
+ 0.011481317,actor
+ 0.011625901,rabbi
+ 0.011790011,therapist
+ 0.011858027,stylist
+ 0.011927197,protagonist
+ 0.012164211,cardiologist
+ 0.012575785,mechanic
+ 0.012809483,shopkeeper
+ 0.012994654,housekeeper
+ 0.013179664,custodian
+ 0.01335733,servant
+ 0.013670375,sociologist
+ 0.014127278,tutor
+ 0.014219792,serviceman
+ 0.014655711,mathematician
+ 0.014854473,dean
+ 0.015029524,trooper
+ 0.015141742,swimmer
+ 0.015156344,advocate
+ 0.01557222,saxophonist
+ 0.015733868,pianist
+ 0.015751142,preacher
+ 0.016024407,trumpeter
+ 0.016097646,cartoonist
+ 0.016130261,gardener
+ 0.016461387,restaurateur
+ 0.016650554,critic
+ 0.017121051,barber
+ 0.017122259,accountant
+ 0.01720576,artist
+ 0.017546909,detective
+ 0.018227421,pharmacist
+ 0.018475993,astronomer
+ 0.01858204,technician
+ 0.018746192,barrister
+ 0.018977813,author
+ 0.018980337,doctoral_student
+ 0.019002901,welder
+ 0.019098919,valedictorian
+ 0.020068083,teacher
+ 0.020171834,guidance_counselor
+ 0.0201938,headmaster
+ 0.020647509,chef
+ 0.020650826,bodyguard
+ 0.020840159,sergeant
+ 0.021007536,screenwriter
+ 0.021030515,counselor
+ 0.02120238,disc_jockey
+ 0.02149833,cellist
+ 0.021505099,butcher
+ 0.022514418,assistant_professor
+ 0.022725649,professor
+ 0.022807248,clerk
+ 0.02306848,stockbroker
+ 0.023169298,parishioner
+ 0.023250725,boxer
+ 0.02366956,painter
+ 0.023768736,guitarist
+ 0.023878789,character
+ 0.024045991,electrician
+ 0.024093177,dentist
+ 0.024663981,gangster
+ 0.025031835,mobster
+ 0.025394209,alderman
+ 0.025995335,photojournalist
+ 0.026087873,instructor
+ 0.026287742,adjunct_professor
+ 0.026415763,sheriff_deputy
+ 0.026566766,fireman
+ 0.027042976,cop
+ 0.02736355,physicist
+ 0.028252734,registered_nurse
+ 0.029060371,inventor
+ 0.02950241,associate_dean
+ 0.02986717,magician
+ 0.029889105,cinematographer
+ 0.030162781,associate_professor
+ 0.030501204,paralegal
+ 0.030655969,sculptor
+ 0.030664794,professor_emeritus
+ 0.030923031,graphic_designer
+ 0.030965514,narrator
+ 0.03113501,bookkeeper
+ 0.031554528,lifeguard
+ 0.031912416,protester
+ 0.032576308,drug_addict
+ 0.033059336,pediatrician
+ 0.033330083,baker
+ 0.033466972,drummer
+ 0.033643764,student
+ 0.034035705,illustrator
+ 0.034525327,patrolman
+ 0.034747459,hairdresser
+ 0.037651747,foreman
+ 0.037722327,carpenter
+ 0.037771177,pastor
+ 0.038419813,nanny
+ 0.038888887,teenager
+ 0.040513169,janitor
+ 0.043088194,firefighter
+ 0.047822051,wrestler
+ 0.2377613,maid
+ 0.24125955,nun
+ 0.25276467,ballerina
+ 0.27540293,waitress
+ 0.34036583,housewife
+ 0.3523514,actress
+ 0.40583247,businesswoman

@@ -27,7 +27,7 @@ def debias(E, gender_specific_words, definitional, equalize):
     candidates = {x for e1, e2 in equalize for x in [(e1.lower(), e2.lower()),
                                                      (e1.title(), e2.title()),
                                                      (e1.upper(), e2.upper())]}
-    print(candidates)
+#     print(candidates)
     for (a, b) in candidates:
         if (a in E.index and b in E.index):
             y = we.drop((E.v(a) + E.v(b)) / 2, gender_direction)
@@ -53,14 +53,12 @@ if __name__ == "__main__":
 
     with open(args.definitional_filename, "r") as f:
         defs = json.load(f)
-    print("definitional", defs)
 
     with open(args.equalize_filename, "r") as f:
         equalize_pairs = json.load(f)
 
     with open(args.gendered_words_filename, "r") as f:
         gender_specific_words = json.load(f)
-    print("gender specific", len(gender_specific_words), gender_specific_words[:10])
 
     E = we.WordEmbedding(args.embedding_filename)
 
