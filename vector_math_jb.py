@@ -78,18 +78,25 @@ def show_nns(e, word, k=10):
 def show_analogy(e, a, b, c, k=5):
     """Compute and print a vector analogy."""
     a, b, c = a.lower(), b.lower(), c.lower()
-
+    
     va = e.v(a)
     vb = e.v(b)
     vc = e.v(c)
+   
     #print("'{a:s}' is to '{b:s}' as '{c:s}' is to ___".format(**locals()))
     candidates = analogy(va, vb, vc, e.vecs, k)
     targets = []
     for i, sim in zip(*candidates):
         target_word = e.words[i]
-        if target_word <> c and np.any(np.not_equal(va,vb)):# don't return the same word if it's not supposed to be the same (?)
+
+        # don't return the same word if it's not supposed to be the same
+        if target_word == c:
+            if a == b:
+                targets.append(target_word)
+        else:
             targets.append(target_word)
-            #print("{:.03f} : '{:s}'".format(sim, target_word))
+    #print("{:.03f} : '{:s}'".format(sim, target_word))
+
     #print("")
     targets.reverse()
     return targets
