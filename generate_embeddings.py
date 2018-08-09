@@ -12,6 +12,12 @@ import datetime
 
 if __name__ == "__main__":
     
+    print ("Loading alpha data")
+    print(datetime.datetime.now())
+    with open('./data/words_alpha_clean.txt') as f:
+        words = f.read().splitlines()
+    alpha = set(words)
+    
     print ("Loading news article data")
     print(datetime.datetime.now())
     articles = pd.read_csv("./data/RANE/2018_articles.csv")
@@ -27,6 +33,9 @@ if __name__ == "__main__":
             print (i, "articles preprocessed")
             print(datetime.datetime.now())
         text = gensim.utils.simple_preprocess(articles.iloc[i]['article'])
+        for w in text:
+            if w not in alpha:
+                text.remove(w)
         preprocessed.append(text)
     
     # create model (this will take hours)
@@ -37,7 +46,7 @@ if __name__ == "__main__":
     # write model to file
     print ("Writing embedding matrix to file")
     print(datetime.datetime.now())
-    model.wv.save_word2vec_format('./embeddings/RANE/RANE_300d.txt', binary=False)
+    model.wv.save_word2vec_format('./embeddings/RANE/RANE_300d_english.txt', binary=False)
     
     # end
     print ("Finished!")
