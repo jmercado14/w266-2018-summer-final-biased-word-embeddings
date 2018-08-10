@@ -1,0 +1,11 @@
+﻿Filename,Bias,Source,Status,Sum,Avg
+gender_bias_rane_projection_score-5.3.txt ,gender,rane,biased,25.64523736,0.089356228
+gender_debiased_rane_projection_score-5.3.txt ,gender,rane,debiased,8.082660209,0.028162579
+gender_bias_projection_score-5.3.txt ,gender,,biased,24.7507573,0.077588581
+gender_debiased_projection_score-5.3.txt ,gender,,debiased,8.121175146,0.025458229
+political_bias_gnews_projection_score-5.3.txt ,political,gnews,biased,17.18523819,0.05387222
+political_debiased_gnews_projection_score-5.3.txt ,political,gnews,debiased,9.553340053,0.029947774
+political_bias_rane_projection_score-5.3.txt ,political,rane,biased,14.24260658,0.049625807
+political_debiased_rane_projection_score-5.3.txt ,political,rane,debiased,12.0448566,0.041968141
+political_bias_projection_score-5.3.txt ,political,,biased,14.24260658,0.049625807
+political_debiased_projection_score-5.3.txt ,political,,debiased,12.62354714,0.043984485

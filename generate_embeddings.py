@@ -12,12 +12,6 @@ import datetime
 
 if __name__ == "__main__":
     
-    print ("Loading alpha data")
-    print(datetime.datetime.now())
-    with open('./data/words_alpha_clean.txt') as f:
-        words = f.read().splitlines()
-    alpha = set(words)
-    
     print ("Loading news article data")
     print(datetime.datetime.now())
     articles = pd.read_csv("./data/RANE/2018_articles.csv")
@@ -27,15 +21,15 @@ if __name__ == "__main__":
     print ("Beginning preprocessing")
     print(datetime.datetime.now())
     print(articles.shape)
+    # troublesome_sources = ['El País','Clarín.com','Acento.com','El Observador','ABC Noticias San Luis','Monetary Authority of Singapore','Other-Source','Dinero.com','Swissinfo.ch','Al-Monitor','nan','wiki-test']
     for i in range(articles.shape[0]):
     # for i in range(5):
+        # if (articles.iloc[i]['source'] in troublesome_sources):
+        #     continue
         if i%100000 == 0:
             print (i, "articles preprocessed")
             print(datetime.datetime.now())
         text = gensim.utils.simple_preprocess(articles.iloc[i]['article'])
-        for w in text:
-            if w not in alpha:
-                text.remove(w)
         preprocessed.append(text)
     
     # create model (this will take hours)
