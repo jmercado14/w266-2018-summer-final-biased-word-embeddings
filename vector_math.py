@@ -29,22 +29,16 @@ def find_nn_cos(v, Wv, k=10):
       similarities: (k-dimensional vector of float), cosine similarity of each 
         neighbor in nns.
     """
-    pass
-    #### YOUR CODE HERE ####
-    nns = []
-    ds = []
+
+    # calculate cosine similarity of v with all other words in vocab
+    def cos_sim(c):
+        return np.dot(v,c) / (np.linalg.norm(v) * np.linalg.norm(c))
+        
+    sims = np.apply_along_axis(cos_sim,1,Wv)
+    nns = np.argsort(sims)[-k:]
+    similarities = np.sort(sims)[-k:]
     
-    mid = np.dot(Wv, v)
-    norm_Wv = np.linalg.norm(Wv, axis=1)
-    norm_v = np.linalg.norm(v, axis=-1)
-    # print (norm_Wv, norm_v)
-    neighbors = np.divide(mid, np.dot(norm_Wv, norm_v))
-    nns = np.argsort(neighbors)[-k:]
-    for n in nns:
-        ds.append(neighbors[n])
-    # print(nns, ds)
-    return nns, ds
-    #### END(YOUR CODE) ####
+    return(nns,similarities)
 
 
 def analogy(vA, vB, vC, Wv, k=5):
@@ -67,32 +61,42 @@ def analogy(vA, vB, vC, Wv, k=5):
         of the top candidate words.
     """
     pass
-    #### YOUR CODE HERE ####
-    v = vC + (vB-vA)
+    v = vC - (vA - vB)
     return find_nn_cos(v, Wv, k)
 
-    #### END(YOUR CODE) ####
-    
-def show_nns(hands, word, k=10):
+
+def show_nns(e, word, k=10):
     """Helper function to print neighbors of a given word."""
-    word = word.lower()
+    word = word.lower() # leave in just in case
     print("Nearest neighbors for '{:s}'".format(word))
-    v = hands.get_vector(word)
-    for i, sim in zip(*vector_math.find_nn_cos(v, hands.W, k)):
-        target_word = hands.vocab.id_to_word[i]
+    v = e.v(word)
+    for i, sim in zip(*find_nn_cos(v, e.vecs, k)):
+        target_word = e.words[i]
         print("{:.03f} : '{:s}'".format(sim, target_word))
     print("")
-    return
     
-def show_analogy(hands, a, b, c, k=5):
+def show_analogy(e, a, b, c, k=5):
     """Compute and print a vector analogy."""
     a, b, c = a.lower(), b.lower(), c.lower()
-    va = hands.get_vector(a)
-    vb = hands.get_vector(b)
-    vc = hands.get_vector(c)
-    print("'{a:s}' is to '{b:s}' as '{c:s}' is to ___".format(**locals()))
-    for i, sim in zip(*vector_math.analogy(va, vb, vc, hands.W, k)):
-        target_word = hands.vocab.id_to_word[i]
-        print("{:.03f} : '{:s}'".format(sim, target_word))
-    print("")
-    return
+    
+    va = e.v(a)
+    vb = e.v(b)
+    vc = e.v(c)
+   
+    #print("'{a:s}' is to '{b:s}' as '{c:s}' is to ___".format(**locals()))
+    candidates = analogy(va, vb, vc, e.vecs, k)
+    targets = []
+    for i, sim in zip(*candidates):
+        target_word = e.words[i]
+
+        # don't return the same word if it's not supposed to be the same
+        if target_word == c:
+            if a == b:
+                targets.append(target_word)
+        else:
+            targets.append(target_word)
+    #print("{:.03f} : '{:s}'".format(sim, target_word))
+
+    #print("")
+    targets.reverse()
+    return targets
